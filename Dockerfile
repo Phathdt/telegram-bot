@@ -19,7 +19,6 @@ WORKDIR /usr/src/app
 COPY package.json ./
 COPY yarn.lock ./
 RUN yarn install --prod
-RUN apk del .gyp
 
 COPY --from=builder /usr/src/app/dist ./dist
 
