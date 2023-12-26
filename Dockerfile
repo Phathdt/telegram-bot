@@ -12,7 +12,7 @@ RUN yarn build
 
 # Production stage
 FROM node:20.10-alpine
-RUN apk add --no-cache --virtual .gyp python make g++
+RUN apk add --update python3 make g++ && rm -rf /var/cache/apk/*
 
 WORKDIR /usr/src/app
 
